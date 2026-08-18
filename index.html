@@ -1,0 +1,950 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Haripriya Patra | AI Engineer &amp; Software Developer | 3D Cyber Portfolio</title>
+  <meta name="description" content="Cinematic 3D Cyberpunk Portfolio of Haripriya Patra — B.Tech Computer Science & Engineering (Artificial Intelligence) Developer, AI Visionary, and Systems Engineer.">
+  <meta name="keywords" content="Haripriya Patra, AI Engineer, Computer Science, DeepFace, Python, Portfolio, 3D Web, Cyberpunk">
+  <meta name="author" content="Haripriya Patra">
+
+  <!-- Portfolio v1.0 | Last built: 2026-08-18 -->
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,400;0,500;0,700;1,400&family=Space+Grotesk:wght@400;500;600;700&family=Syne:wght@700;800;900&display=swap" rel="stylesheet">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="design-tokens.css">
+  <link rel="stylesheet" href="glassmorphism.css">
+  <link rel="stylesheet" href="hero-editorial.css">
+  <link rel="stylesheet" href="gallery.css">
+  <link rel="stylesheet" href="studio-lab.css">
+  <link rel="stylesheet" href="video-mode.css">
+  <link rel="stylesheet" href="main.css">
+</head>
+<body data-lighting-preset="cyberpunk">
+
+  <!-- Ambient Glowing Particles Canvas -->
+  <canvas id="particles-canvas"></canvas>
+
+  <!-- Cyber Navigation Header -->
+  <header class="cyber-navbar">
+    <a href="#hero" class="nav-brand-link">
+      <div class="brand-monogram">HP</div>
+      <div class="brand-text-block">
+        <span class="brand-name">HARIPRIYA PATRA</span>
+        <span class="brand-sub">CSE // ARTIFICIAL INTELLIGENCE</span>
+      </div>
+    </a>
+
+    <ul class="nav-menu-cluster">
+      <li><a href="#hero" class="nav-link-item">// 01 HERO</a></li>
+      <li><a href="#projects" class="nav-link-item">// 02 PROJECTS</a></li>
+      <li><a href="#experience" class="nav-link-item">// 03 EXPERIENCE</a></li>
+      <li><a href="#skills" class="nav-link-item">// 04 SKILLS</a></li>
+      <li><a href="#lighting-lab" class="nav-link-item">// 05 LIGHTING LAB</a></li>
+      <li><a href="#contact" class="nav-link-item">// 06 CONTACT</a></li>
+    </ul>
+
+    <div class="nav-actions-cluster">
+      <button class="video-mode-trigger-btn" id="video-mode-trigger-btn" title="Launch Cinematic 3D Video Showreel">
+        <span>▶</span> VIDEO MODE
+      </button>
+
+      <button class="icon-action-btn" id="audio-toggle-btn" title="Toggle Procedural Web Audio (Press M)">
+        <span id="audio-status-icon">🔇</span>
+      </button>
+
+      <a href="#contact" class="cyber-btn cyber-btn-primary" style="padding: 8px 16px; font-size: 0.8rem;">
+        HIRE ME ⚡
+      </a>
+    </div>
+  </header>
+
+  <main>
+    <!-- ==========================================================================
+         HERO SECTION: 3D EDITORIAL STAGE
+         ========================================================================== -->
+    <section id="hero" class="hero-section">
+      <div class="hero-ambient-glow"></div>
+      <div class="hero-ambient-secondary"></div>
+
+      <div class="hero-card-container">
+        <div class="hero-3d-card cyber-brackets" id="hero-3d-card">
+          
+          <!-- Card Top Bar HUD -->
+          <div class="card-hud-header">
+            <div class="hud-brand">
+              <div class="hud-logo-icon">HP</div>
+              <div class="hud-title-group">
+                <h2>HARIPRIYA PATRA // NEURAL ENGINE</h2>
+                <span>NALCO INTERN ALUMNA • VIEW B.TECH AI</span>
+              </div>
+            </div>
+
+            <div class="hud-telemetry-cluster">
+              <div class="telemetry-item">
+                <span class="telemetry-label">SYSTEM STATUS</span>
+                <span class="telemetry-value" style="color: var(--neon-green);">ONLINE 🟢</span>
+              </div>
+              <div class="telemetry-item">
+                <span class="telemetry-label">POLYCOUNT</span>
+                <span class="telemetry-value" id="telemetry-polycount">48.2K</span>
+              </div>
+              <div class="telemetry-item">
+                <span class="telemetry-label">SHADER CORE</span>
+                <span class="telemetry-value" id="telemetry-shader">SSS-OCTANE</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card Center Visual Viewport with Overlapping 3D Layers -->
+          <div class="card-stage-viewport" id="hero-stage-viewport">
+            <!-- Layer 1: Background Floor Grid -->
+            <div class="stage-layer-bg"></div>
+            <div class="stage-layer-grid"></div>
+
+            <!-- Layer 2: Extruded 3D Typography Behind Character -->
+            <div class="stage-layer-typography">
+              <h1 class="extruded-3d-text" id="extruded-3d-text">AI // DEV</h1>
+            </div>
+
+            <!-- Layer 3: Stylized 3D Character Render -->
+            <div class="stage-layer-character" id="stage-character-layer">
+              <img src="hero-character-main.jpg" alt="Haripriya Patra 3D Cyberpunk AI Engineer Persona" class="character-render-img" id="hero-character-img">
+            </div>
+
+            <!-- Layer 4: Foreground Glass Refraction & HUD Overlays -->
+            <div class="stage-layer-overlay">
+              <div class="stage-hud-top">
+                <div class="persona-tag" id="hero-persona-tag">
+                  <span class="pulse-dot"></span> 01 // HARIPRIYA PATRA
+                </div>
+                <div class="neon-badge">
+                  <span>CGPA: 7.43</span>
+                </div>
+              </div>
+
+              <div class="stage-hud-bottom">
+                <div class="spec-badge-box">
+                  <div class="spec-badge-title" id="hero-badge-title">B.Tech CSE (AI) @ VIEW</div>
+                  <div class="spec-badge-desc" id="hero-badge-desc">Deep Learning • Computer Vision • Python Core</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card Editorial Footer Controls -->
+          <div class="card-editorial-footer">
+            <!-- Persona Switcher Thumbnails -->
+            <div class="persona-selector-track">
+              <button class="persona-thumb-btn active" title="Persona 01: AI Visionary">
+                <img src="hero-character-main.jpg" alt="Persona 1">
+              </button>
+              <button class="persona-thumb-btn" title="Persona 02: Full-Stack Developer">
+                <img src="companion-character-1.jpg" alt="Persona 2">
+              </button>
+              <button class="persona-thumb-btn" title="Persona 03: Vision & Intelligence">
+                <img src="companion-character-2.jpg" alt="Persona 3">
+              </button>
+            </div>
+
+            <!-- Carousel Pagination Arrow Controls -->
+            <div class="hero-nav-controls">
+              <button class="nav-arrow-btn" id="hero-prev-btn" title="Previous Persona">&lt;</button>
+              <button class="nav-arrow-btn" id="hero-next-btn" title="Next Persona">&gt;</button>
+            </div>
+
+            <!-- Call-To-Action Buttons -->
+            <div class="hero-cta-cluster">
+              <a href="#projects" class="cyber-btn cyber-btn-primary">
+                EXPLORE WORK ↗
+              </a>
+              <button class="cyber-btn cyber-btn-secondary" onclick="window.videoMode.open()">
+                <span>▶</span> VIDEO TOUR
+              </button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         PROJECT VAULT SHOWCASE SECTION
+         ========================================================================== -->
+    <section id="projects" class="section-container">
+      <div class="section-header">
+        <span class="section-tag">// 02 • PROJECT VAULT</span>
+        <h2 class="section-title">INTELLIGENT SYSTEMS &amp; SOFTWARE</h2>
+        <p class="section-desc">
+          Featured engineering projects spanning computer vision emotion recognition, conversational neural models, automated parking matrices, and fintech payment utilities.
+        </p>
+      </div>
+
+      <!-- Filter Tabs -->
+      <div class="filter-tabs-row">
+        <button class="filter-tab-btn active" data-filter="all">ALL PROJECTS [6]</button>
+        <button class="filter-tab-btn" data-filter="ai">ARTIFICIAL INTELLIGENCE</button>
+        <button class="filter-tab-btn" data-filter="systems">SYSTEMS &amp; AUTOMATION</button>
+        <button class="filter-tab-btn" data-filter="utilities">FINTECH &amp; UTILITIES</button>
+      </div>
+
+      <!-- 3D Projects Grid -->
+      <div class="projects-grid">
+        
+        <!-- Card 1: DeepFace -->
+        <div class="project-card cyber-brackets" data-category="ai" data-project-key="deepface">
+          <div class="project-card-media">
+            <img src="project-deepface.jpg" alt="DeepFace Emotion Recognition AI">
+            <div class="project-card-badge">COMPUTER VISION</div>
+          </div>
+          <div class="project-card-content">
+            <span class="project-category">AI // FACIAL ANALYSIS</span>
+            <h3 class="project-title">DeepFace Emotion Recognition AI</h3>
+            <p class="project-desc">
+              Python application detecting facial expressions from images/video, classifying them in real-time as happy, sad, angry, or neutral.
+            </p>
+            <div class="project-tech-stack">
+              <span class="tech-tag">Python</span>
+              <span class="tech-tag">DeepFace</span>
+              <span class="tech-tag">OpenCV</span>
+              <span class="tech-tag">CNNs</span>
+            </div>
+            <div class="project-card-action">
+              <span>INSPECT ARCHITECTURE</span>
+              <span>↗</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 2: AI Chatbot -->
+        <div class="project-card cyber-brackets" data-category="ai" data-project-key="chatbot">
+          <div class="project-card-media">
+            <img src="project-chatbot.jpg" alt="Conversational AI Chatbot">
+            <div class="project-card-badge">NLP CORE</div>
+          </div>
+          <div class="project-card-content">
+            <span class="project-category">AI // NLP ENGINE</span>
+            <h3 class="project-title">NeuroChat Conversational Agent</h3>
+            <p class="project-desc">
+              Intelligent multi-turn conversational bot built with Python, featuring custom tokenization, entity extraction, and dialogue trees.
+            </p>
+            <div class="project-tech-stack">
+              <span class="tech-tag">Python</span>
+              <span class="tech-tag">NLP</span>
+              <span class="tech-tag">Dialogue AI</span>
+              <span class="tech-tag">Regex</span>
+            </div>
+            <div class="project-card-action">
+              <span>INSPECT ARCHITECTURE</span>
+              <span>↗</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 3: Smart Parking -->
+        <div class="project-card cyber-brackets" data-category="systems" data-project-key="parking">
+          <div class="project-card-media">
+            <img src="project-parking.svg" alt="Smart Parking Management System">
+            <div class="project-card-badge">AUTOMATION</div>
+          </div>
+          <div class="project-card-content">
+            <span class="project-category">SYSTEMS // INFRASTRUCTURE</span>
+            <h3 class="project-title">SmartPark Management Matrix</h3>
+            <p class="project-desc">
+              Automated facility management system tracking real-time vehicle entry, exit, timestamps, and smart vacant slot allocation.
+            </p>
+            <div class="project-tech-stack">
+              <span class="tech-tag">Python</span>
+              <span class="tech-tag">Data Structures</span>
+              <span class="tech-tag">Slot Routing</span>
+            </div>
+            <div class="project-card-action">
+              <span>INSPECT ARCHITECTURE</span>
+              <span>↗</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 4: UPI QR Generator -->
+        <div class="project-card cyber-brackets" data-category="utilities" data-project-key="upiqr">
+          <div class="project-card-media">
+            <img src="project-upiqr.svg" alt="UPI QR Code Payment Generator">
+            <div class="project-card-badge">FINTECH</div>
+          </div>
+          <div class="project-card-content">
+            <span class="project-category">FINTECH // NPCI PROTOCOL</span>
+            <h3 class="project-title">UPI NeoPay QR Generator</h3>
+            <p class="project-desc">
+              Instant cryptographic generator synthesizing high-density scannable UPI payment QR codes from custom merchant VPAs.
+            </p>
+            <div class="project-tech-stack">
+              <span class="tech-tag">Python</span>
+              <span class="tech-tag">QR Engine</span>
+              <span class="tech-tag">Pillow</span>
+              <span class="tech-tag">NPCI URI</span>
+            </div>
+            <div class="project-card-action">
+              <span>INSPECT ARCHITECTURE</span>
+              <span>↗</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 5: Rent Calculator -->
+        <div class="project-card cyber-brackets" data-category="utilities" data-project-key="rentcalc">
+          <div class="project-card-media">
+            <img src="project-rentcalc.svg" alt="Rent Calculator & Utility Financial Engine">
+            <div class="project-card-badge">FINANCIAL MATH</div>
+          </div>
+          <div class="project-card-content">
+            <span class="project-category">UTILITY // ALGORITHMS</span>
+            <h3 class="project-title">RentFlow Financial Matrix</h3>
+            <p class="project-desc">
+              Algorithmic tool calculating multi-occupant lease expenses, dynamic amenity distribution, and automated expense audit receipts.
+            </p>
+            <div class="project-tech-stack">
+              <span class="tech-tag">Python</span>
+              <span class="tech-tag">Financial Math</span>
+              <span class="tech-tag">CLI</span>
+            </div>
+            <div class="project-card-action">
+              <span>INSPECT ARCHITECTURE</span>
+              <span>↗</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 6: Game & Utility Suite -->
+        <div class="project-card cyber-brackets" data-category="systems" data-project-key="gamesuite">
+          <div class="project-card-media">
+            <img src="project-gamesuite.svg" alt="Python Game and Utility Suite">
+            <div class="project-card-badge">SOFTWARE SUITE</div>
+          </div>
+          <div class="project-card-content">
+            <span class="project-category">DESKTOP // ALGORITHMS</span>
+            <h3 class="project-title">Python Cyber Utility &amp; Game Suite</h3>
+            <p class="project-desc">
+              Collection of self-engineered desktop tools including real-time Digital Clock, Notepad Text Editor, Lexical Spell Checker, and AI Tic-Tac-Toe.
+            </p>
+            <div class="project-tech-stack">
+              <span class="tech-tag">Python</span>
+              <span class="tech-tag">Tkinter</span>
+              <span class="tech-tag">Minimax AI</span>
+              <span class="tech-tag">Levenshtein</span>
+            </div>
+            <div class="project-card-action">
+              <span>INSPECT ARCHITECTURE</span>
+              <span>↗</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         EXPERIENCE & EDUCATION TIMELINE SECTION
+         ========================================================================== -->
+    <section id="experience" class="section-container" style="background: rgba(4, 7, 20, 0.4);">
+      <div class="section-header">
+        <span class="section-tag">// 03 • TRAJECTORY</span>
+        <h2 class="section-title">EXPERIENCE &amp; EDUCATION</h2>
+        <p class="section-desc">
+          Professional industry exposure at NALCO Systems Department and ongoing academic specialization in Artificial Intelligence.
+        </p>
+      </div>
+
+      <div class="timeline-grid">
+        
+        <!-- Experience Column -->
+        <div class="timeline-column">
+          <div class="timeline-col-title">
+            <span>💼</span> INDUSTRY EXPERIENCE
+          </div>
+
+          <div class="glass-panel timeline-card cyber-brackets">
+            <div class="timeline-card-header">
+              <div>
+                <div class="timeline-role">Systems Department Intern</div>
+                <div class="timeline-company">National Aluminium Company Limited (NALCO)</div>
+              </div>
+              <div class="timeline-date-badge">MAY 2026</div>
+            </div>
+
+            <ul class="timeline-points">
+              <li class="timeline-point">
+                Completed an intensive hands-on internship in NALCO's Systems Department, gaining end-to-end exposure to enterprise IT operations and production workflows.
+              </li>
+              <li class="timeline-point">
+                Engineered technical projects solving internal operational challenges and received an official certificate of completion from the Department of Systems.
+              </li>
+              <li class="timeline-point">
+                Collaborated with senior IT infrastructure engineers on database querying, system automation, and operational troubleshooting.
+              </li>
+            </ul>
+          </div>
+
+          <div class="glass-panel timeline-card">
+            <div class="timeline-card-header">
+              <div>
+                <div class="timeline-role">Certifications &amp; Accreditations</div>
+                <div class="timeline-company">Verified Credentials</div>
+              </div>
+            </div>
+            <ul class="timeline-points">
+              <li class="timeline-point">
+                <strong>NALCO Systems Internship Certificate</strong> — Systems Department, National Aluminium Company Limited.
+              </li>
+              <li class="timeline-point">
+                <strong>NPTEL National Certification</strong> — Verified technical certification in core computer science competencies.
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Education Column -->
+        <div class="timeline-column">
+          <div class="timeline-col-title">
+            <span>🎓</span> ACADEMIC FOUNDATION
+          </div>
+
+          <div class="glass-panel timeline-card cyber-brackets">
+            <div class="timeline-card-header">
+              <div>
+                <div class="timeline-role">B.Tech in Computer Science &amp; Engineering</div>
+                <div class="timeline-company">Vignan's Institute of Engineering for Women</div>
+              </div>
+              <div class="timeline-date-badge">2024 - 2028</div>
+            </div>
+
+            <ul class="timeline-points">
+              <li class="timeline-point">
+                <strong>Specialization:</strong> Artificial Intelligence &amp; Machine Learning.
+              </li>
+              <li class="timeline-point">
+                <strong>Academic Standing:</strong> CGPA 7.43 / 10.0.
+              </li>
+              <li class="timeline-point">
+                Coursework encompassing Neural Networks, Computer Vision, Data Structures, Relational Database Management Systems, and Object-Oriented Software Design.
+              </li>
+            </ul>
+          </div>
+
+          <div class="glass-panel timeline-card">
+            <div class="timeline-card-header">
+              <div>
+                <div class="timeline-role">Engineering Philosophy</div>
+                <div class="timeline-company">Code Quality &amp; Innovation</div>
+              </div>
+            </div>
+            <p style="font-size: 0.9rem; color: var(--text-secondary); line-height: 1.6;">
+              "Combining mathematical modeling with elegant software architecture. Passionate about turning complex AI research concepts into reliable, real-world applications that deliver measurable value."
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         SKILLS MATRIX & TECHNICAL ARSENAL
+         ========================================================================== -->
+    <section id="skills" class="section-container">
+      <div class="section-header">
+        <span class="section-tag">// 04 • TECHNICAL ARSENAL</span>
+        <h2 class="section-title">SKILLS &amp; PROFICIENCY RADAR</h2>
+        <p class="section-desc">
+          Core competencies across programming languages, AI / Computer Vision frameworks, database systems, and modern web interfaces.
+        </p>
+      </div>
+
+      <div class="skills-grid">
+        
+        <!-- Category 1: Languages -->
+        <div class="glass-panel skill-category-card cyber-brackets">
+          <div class="skill-cat-title">
+            <span>⚡</span> PROGRAMMING LANGUAGES
+          </div>
+          <div class="skill-items-list">
+            <div class="skill-bar-item">
+              <div class="skill-meta-row">
+                <span class="skill-name">Python (AI / Backend)</span>
+                <span class="skill-pct">95%</span>
+              </div>
+              <div class="skill-progress-bg">
+                <div class="skill-progress-fill" style="width: 95%;"></div>
+              </div>
+            </div>
+
+            <div class="skill-bar-item">
+              <div class="skill-meta-row">
+                <span class="skill-name">Java (Core &amp; OOP)</span>
+                <span class="skill-pct">85%</span>
+              </div>
+              <div class="skill-progress-bg">
+                <div class="skill-progress-fill" style="width: 85%;"></div>
+              </div>
+            </div>
+
+            <div class="skill-bar-item">
+              <div class="skill-meta-row">
+                <span class="skill-name">SQL (Relational Queries)</span>
+                <span class="skill-pct">88%</span>
+              </div>
+              <div class="skill-progress-bg">
+                <div class="skill-progress-fill" style="width: 88%;"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Category 2: AI & Vision -->
+        <div class="glass-panel skill-category-card cyber-brackets">
+          <div class="skill-cat-title">
+            <span>🧠</span> AI &amp; COMPUTER VISION
+          </div>
+          <div class="skill-items-list">
+            <div class="skill-bar-item">
+              <div class="skill-meta-row">
+                <span class="skill-name">DeepFace &amp; Facial Recognition</span>
+                <span class="skill-pct">92%</span>
+              </div>
+              <div class="skill-progress-bg">
+                <div class="skill-progress-fill" style="width: 92%;"></div>
+              </div>
+            </div>
+
+            <div class="skill-bar-item">
+              <div class="skill-meta-row">
+                <span class="skill-name">OpenCV &amp; Image Processing</span>
+                <span class="skill-pct">88%</span>
+              </div>
+              <div class="skill-progress-bg">
+                <div class="skill-progress-fill" style="width: 88%;"></div>
+              </div>
+            </div>
+
+            <div class="skill-bar-item">
+              <div class="skill-meta-row">
+                <span class="skill-name">NLP &amp; Conversational AI</span>
+                <span class="skill-pct">85%</span>
+              </div>
+              <div class="skill-progress-bg">
+                <div class="skill-progress-fill" style="width: 85%;"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Category 3: Web & Tools -->
+        <div class="glass-panel skill-category-card cyber-brackets">
+          <div class="skill-cat-title">
+            <span>🛠️</span> WEB &amp; DEV TOOLS
+          </div>
+          <div class="skill-items-list">
+            <div class="skill-bar-item">
+              <div class="skill-meta-row">
+                <span class="skill-name">HTML5 / CSS3 (3D Glassmorphism)</span>
+                <span class="skill-pct">92%</span>
+              </div>
+              <div class="skill-progress-bg">
+                <div class="skill-progress-fill" style="width: 92%;"></div>
+              </div>
+            </div>
+
+            <div class="skill-bar-item">
+              <div class="skill-meta-row">
+                <span class="skill-name">Git &amp; GitHub Version Control</span>
+                <span class="skill-pct">90%</span>
+              </div>
+              <div class="skill-progress-bg">
+                <div class="skill-progress-fill" style="width: 90%;"></div>
+              </div>
+            </div>
+
+            <div class="skill-bar-item">
+              <div class="skill-meta-row">
+                <span class="skill-name">Web Audio &amp; Interactive Canvas</span>
+                <span class="skill-pct">85%</span>
+              </div>
+              <div class="skill-progress-bg">
+                <div class="skill-progress-fill" style="width: 85%;"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         INTERACTIVE LIGHTING & SHADER STUDIO LAB
+         ========================================================================== -->
+    <section id="lighting-lab" class="section-container lighting-lab-section">
+      <div class="section-header">
+        <span class="section-tag">// 05 • SHADER &amp; LIGHTING LAB</span>
+        <h2 class="section-title">REAL-TIME LIGHTING STUDIO</h2>
+        <p class="section-desc">
+          Switch atmospheric cyberpunk presets, calibrate volumetric bloom, and inspect real-time telemetry shaders rendered dynamically.
+        </p>
+      </div>
+
+      <div class="studio-grid-layout">
+        
+        <!-- Controls Panel -->
+        <div class="glass-panel studio-controls-card cyber-brackets">
+          <div class="studio-group-title">
+            <span>🎨</span> LIGHTING MOOD PRESETS
+          </div>
+
+          <div class="preset-buttons-grid">
+            <button class="preset-btn active" data-preset="cyberpunk">
+              <span class="preset-swatch" style="color: #00f0ff; background: #00f0ff;"></span>
+              <span>Cyberpunk Neon</span>
+            </button>
+            <button class="preset-btn" data-preset="sunset">
+              <span class="preset-swatch" style="color: #ffb703; background: #ffb703;"></span>
+              <span>Tokyo Sunset</span>
+            </button>
+            <button class="preset-btn" data-preset="midnight">
+              <span class="preset-swatch" style="color: #a855f7; background: #a855f7;"></span>
+              <span>Midnight Holo</span>
+            </button>
+            <button class="preset-btn" data-preset="matrix">
+              <span class="preset-swatch" style="color: #00ff88; background: #00ff88;"></span>
+              <span>Matrix Acid</span>
+            </button>
+          </div>
+
+          <div class="studio-group-title" style="margin-top: 10px;">
+            <span>🎛️</span> CALIBRATION SLIDERS
+          </div>
+
+          <!-- Rim Slider -->
+          <div class="slider-control-group">
+            <div class="slider-label-row">
+              <span>Rim Light Intensity</span>
+              <span id="val-rim-intensity">100%</span>
+            </div>
+            <input type="range" class="cyber-range-slider" id="slider-rim-intensity" min="0.2" max="2" step="0.1" value="1">
+          </div>
+
+          <!-- Bloom Slider -->
+          <div class="slider-control-group">
+            <div class="slider-label-row">
+              <span>Volumetric Bloom Strength</span>
+              <span id="val-bloom-strength">100%</span>
+            </div>
+            <input type="range" class="cyber-range-slider" id="slider-bloom-strength" min="0.2" max="2" step="0.1" value="1">
+          </div>
+
+          <!-- Wireframe Toggle -->
+          <div class="switch-control-row">
+            <div class="switch-label-group">
+              <span class="switch-name">Wireframe HUD Grid</span>
+              <span class="switch-desc">Display active 3D spatial overlay</span>
+            </div>
+            <label class="toggle-switch">
+              <input type="checkbox" id="toggle-wireframe-grid" checked>
+              <span class="toggle-slider"></span>
+            </label>
+          </div>
+        </div>
+
+        <!-- Live Visual Telemetry Sphere -->
+        <div class="glass-panel studio-preview-card cyber-brackets">
+          <div class="telemetry-radar-grid"></div>
+
+          <div class="telemetry-header-bar">
+            <span class="neon-badge">
+              <span class="pulse-dot"></span> LIVE SHADER TELEMETRY
+            </span>
+            <span style="font-family: var(--font-mono); font-size: 0.8rem; color: var(--light-primary);">
+              SSS-OCTANE // ACTIVE
+            </span>
+          </div>
+
+          <div class="telemetry-sphere-container">
+            <div class="hologram-orb" id="studio-hologram-orb"></div>
+          </div>
+
+          <div class="telemetry-readout-rows">
+            <div class="telemetry-item">
+              <span class="telemetry-label">GAMMA</span>
+              <span class="telemetry-value">2.20 sRGB</span>
+            </div>
+            <div class="telemetry-item">
+              <span class="telemetry-label">SPECULAR</span>
+              <span class="telemetry-value">0.85 PBR</span>
+            </div>
+            <div class="telemetry-item">
+              <span class="telemetry-label">ROUGHNESS</span>
+              <span class="telemetry-value">0.12 SSS</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         CONTACT COMMAND TERMINAL SECTION
+         ========================================================================== -->
+    <section id="contact" class="section-container">
+      <div class="section-header">
+        <span class="section-tag">// 06 • UPLINK &amp; CONTACT</span>
+        <h2 class="section-title">INITIALIZE COLLABORATION</h2>
+        <p class="section-desc">
+          Ready to engineer high-impact AI solutions, Python architectures, and software applications. Send a direct transmission below.
+        </p>
+      </div>
+
+      <div class="contact-section-container">
+        
+        <!-- Cyber Command Terminal -->
+        <div class="terminal-window">
+          <div class="terminal-header">
+            <div class="terminal-dots">
+              <span class="t-dot red"></span>
+              <span class="t-dot yellow"></span>
+              <span class="t-dot green"></span>
+            </div>
+            <span class="terminal-title">haripriya@neural-terminal: ~</span>
+            <span>⚡</span>
+          </div>
+
+          <div class="terminal-body" id="terminal-live-feed">
+            <div class="term-line">
+              <span class="term-prompt">$</span> <span>systemctl status candidate-haripriya</span>
+            </div>
+            <div class="term-line" style="color: var(--neon-green);">
+              <span>● Status: READY // Open for Internships &amp; Engineering Roles</span>
+            </div>
+            <div class="term-line">
+              <span class="term-prompt">$</span> <span>echo $CONTACT_DIRECT</span>
+            </div>
+            <div class="term-line" style="color: var(--light-primary);">
+              <span>Email: haripriyap014@gmail.com | Phone: +91 7815047615</span>
+            </div>
+            <div class="term-line">
+              <span class="term-prompt">$</span> <span>echo $LOCATION</span>
+            </div>
+            <div class="term-line" style="color: var(--text-secondary);">
+              <span>Koraput, Odisha • Visakhapatnam, Andhra Pradesh</span>
+            </div>
+          </div>
+
+          <div style="padding: 1.2rem 1.8rem; border-top: 1px solid rgba(255,255,255,0.08); display: flex; gap: 12px; flex-wrap: wrap;">
+            <button class="cyber-btn" id="copy-email-btn" style="font-size: 0.8rem; padding: 8px 16px;">
+              📋 COPY EMAIL
+            </button>
+            <button class="cyber-btn" id="copy-phone-btn" style="font-size: 0.8rem; padding: 8px 16px;">
+              📱 COPY PHONE
+            </button>
+          </div>
+        </div>
+
+        <!-- Contact Form -->
+        <div class="glass-panel contact-form-card cyber-brackets">
+          <h3 style="font-family: var(--font-heading); font-size: 1.25rem; font-weight: 700; color: #ffffff;">
+            TRANSMIT ENCRYPTED MESSAGE
+          </h3>
+
+          <form id="cyber-contact-form">
+            <div class="form-group">
+              <label class="form-label" for="contact-name">YOUR IDENTITY / ORGANIZATION</label>
+              <input type="text" class="form-input" id="contact-name" placeholder="e.g. Recruiters / Engineering Lead" required>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="contact-email">RETURN TELEMETRY EMAIL</label>
+              <input type="email" class="form-input" id="contact-email" placeholder="your.name@company.com" required>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="contact-message">TRANSMISSION CONTENT</label>
+              <textarea class="form-textarea" id="contact-message" placeholder="Describe the internship opportunity, project requirements, or technical inquiry..." required></textarea>
+            </div>
+
+            <button type="submit" class="cyber-btn cyber-btn-primary" style="width: 100%; margin-top: 6px;">
+              DISPATCH TRANSMISSION 🚀
+            </button>
+
+            <div id="form-submit-status" style="font-family: var(--font-mono); font-size: 0.8rem; text-align: center; min-height: 20px;"></div>
+          </form>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- ==========================================================================
+         CINEMATIC 3D VIDEO MODE & SHOWREEL OVERLAY
+         ========================================================================== -->
+  <div class="video-mode-overlay" id="video-mode-overlay">
+    
+    <!-- Top 21:9 Letterbox Matte Bar -->
+    <div class="cinema-bar-top">
+      <div class="cinema-rec-badge">
+        <span class="rec-dot"></span>
+        <span>REC</span>
+        <span id="cinema-time-code">00:00:00:00</span>
+      </div>
+
+      <div class="cinema-camera-stats">
+        <span>FPS: <strong class="camera-stat-highlight">24.000</strong></span>
+        <span>SHUTTER: <strong class="camera-stat-highlight">180°</strong></span>
+        <span>LENS: <strong class="camera-stat-highlight" id="cinema-cam-angle">CAM 01 // 35mm ANAMORPHIC T1.5</strong></span>
+      </div>
+
+      <button class="cinema-close-btn" id="video-close-btn">
+        EXIT SHOWREEL [ESC] ✕
+      </button>
+    </div>
+
+    <!-- Video Stage Center Viewport -->
+    <div class="cinema-viewport">
+      <div class="cinema-scene-card" id="cinema-scene-card">
+        <img src="hero-character-main.jpg" alt="Cinematic Scene" class="cinema-scene-img" id="cinema-scene-img">
+        <div class="anamorphic-flare"></div>
+      </div>
+
+      <!-- Live Subtitle Narrative Box -->
+      <div class="cinema-caption-box">
+        <div class="cinema-caption-title" id="cinema-caption-title">HARIPRIYA PATRA // NEURAL INTRODUCTION</div>
+        <p class="cinema-caption-text" id="cinema-caption-text">
+          B.Tech Computer Science (Artificial Intelligence) Engineer at VIEW (CGPA: 7.43). Building high-performance AI and software systems.
+        </p>
+      </div>
+    </div>
+
+    <!-- Bottom 21:9 Letterbox Matte Bar -->
+    <div class="cinema-bar-bottom">
+      <!-- Interactive Scrubber -->
+      <div class="cinema-timeline-track" id="cinema-timeline-track">
+        <div class="cinema-timeline-progress" id="cinema-timeline-progress"></div>
+      </div>
+
+      <div class="cinema-controls-row">
+        <div class="cinema-playback-actions">
+          <button class="cinema-step-btn" id="cinema-prev-step" title="Previous Scene">⏮</button>
+          <button class="cinema-play-btn" id="cinema-play-btn" title="Play/Pause Showreel">❚❚</button>
+          <button class="cinema-step-btn" id="cinema-next-step" title="Next Scene">⏭</button>
+
+          <!-- Equalizer Visualizer -->
+          <div class="cinema-audio-viz" title="Synthesized Audio Visualizer">
+            <span class="audio-bar"></span>
+            <span class="audio-bar"></span>
+            <span class="audio-bar"></span>
+            <span class="audio-bar"></span>
+            <span class="audio-bar"></span>
+          </div>
+        </div>
+
+        <!-- Chapters Selector -->
+        <div class="cinema-chapter-selector">
+          <button class="chapter-pill active">01 INTRO</button>
+          <button class="chapter-pill">02 DEEPFACE</button>
+          <button class="chapter-pill">03 CHATBOT</button>
+          <button class="chapter-pill">04 NALCO</button>
+          <button class="chapter-pill">05 SYSTEMS</button>
+          <button class="chapter-pill">06 CONTACT</button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ==========================================================================
+         PROJECT DETAIL INSPECTION MODAL
+         ========================================================================== -->
+  <div class="modal-backdrop" id="project-modal-backdrop">
+    <div class="modal-card cyber-brackets">
+      <button class="modal-close-btn" id="modal-close-btn" title="Close Modal">✕</button>
+
+      <div class="modal-media-viewport">
+        <img src="project-deepface.jpg" alt="Project Visual Preview" id="modal-media-img">
+      </div>
+
+      <div class="modal-body">
+        <div>
+          <span class="project-category" id="modal-category">ARTIFICIAL INTELLIGENCE</span>
+          <h2 style="font-family: var(--font-heading); font-size: 1.8rem; font-weight: 800; color: #ffffff;" id="modal-title">Project Title</h2>
+          <p style="font-family: var(--font-mono); font-size: 0.85rem; color: var(--light-primary); margin-top: 4px;" id="modal-subtitle">Project Subtitle</p>
+        </div>
+
+        <div class="project-tech-stack" id="modal-tags">
+          <!-- Dynamically populated tags -->
+        </div>
+
+        <p style="font-size: 0.95rem; color: var(--text-secondary); line-height: 1.6;" id="modal-desc">
+          Detailed project description.
+        </p>
+
+        <div>
+          <h4 style="font-family: var(--font-heading); font-size: 1rem; color: #ffffff; margin-bottom: 8px;">
+            KEY ENGINEERING HIGHLIGHTS:
+          </h4>
+          <ul class="timeline-points" id="modal-highlights">
+            <!-- Dynamically populated points -->
+          </ul>
+        </div>
+
+        <div>
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+            <h4 style="font-family: var(--font-heading); font-size: 1rem; color: #ffffff;">
+              CODE ARCHITECTURE PREVIEW:
+            </h4>
+            <button class="cyber-btn" id="modal-copy-code-btn" style="padding: 4px 12px; font-size: 0.75rem;">
+              COPY SNIPPET 📋
+            </button>
+          </div>
+          <pre style="background: #030612; border: 1px solid rgba(255,255,255,0.1); border-radius: var(--radius-sm); padding: 1.2rem; overflow-x: auto; font-family: var(--font-mono); font-size: 0.8rem; color: #00f0ff; line-height: 1.5;"><code id="modal-code-snippet"></code></pre>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+         FOOTER SECTION
+         ========================================================================== -->
+  <footer class="cyber-footer">
+    <div class="footer-inner">
+      <div>
+        <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 6px;">
+          <div class="brand-monogram" style="width: 28px; height: 28px; font-size: 0.9rem;">HP</div>
+          <strong style="font-family: var(--font-heading); color: #ffffff;">HARIPRIYA PATRA</strong>
+        </div>
+        <div class="footer-meta">
+          © 2026 Haripriya Patra. All rights reserved. • B.Tech CSE (AI) Developer.
+        </div>
+      </div>
+
+      <div class="footer-meta" id="footer-live-clock">
+        2026-08-17 22:54:30 IST // SYSTEM OK 🟢
+      </div>
+
+      <div class="footer-social-links">
+        <a href="mailto:haripriyap014@gmail.com" class="social-link">EMAIL</a>
+        <a href="tel:7815047615" class="social-link">PHONE</a>
+        <a href="https://github.com/haripriyap020" target="_blank" rel="noopener" class="social-link">GITHUB</a>
+        <a href="https://linkedin.com" target="_blank" rel="noopener" class="social-link">LINKEDIN</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="audio.js"></script>
+  <script src="parallax.js"></script>
+  <script src="character-switch.js"></script>
+  <script src="lighting-engine.js"></script>
+  <script src="particles.js"></script>
+  <script src="video-mode.js"></script>
+  <script src="project-modal.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

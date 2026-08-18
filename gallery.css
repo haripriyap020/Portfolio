@@ -1,0 +1,293 @@
+/* ==========================================================================
+   PROJECT VAULT 3D SHOWCASE & MODAL INSPECTION
+   ========================================================================== */
+
+.section-container {
+  width: 100%;
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 6rem 1.5rem;
+}
+
+.section-header {
+  margin-bottom: 3.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.section-tag {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--light-primary);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.section-title {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4.5vw, 3.2rem);
+  font-weight: 800;
+  color: #ffffff;
+  letter-spacing: -0.5px;
+  line-height: 1.15;
+}
+
+.section-desc {
+  font-family: var(--font-sans);
+  font-size: 1.05rem;
+  color: var(--text-secondary);
+  max-width: 650px;
+  line-height: 1.6;
+}
+
+/* Category Filter Tabs */
+.filter-tabs-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 2.5rem;
+  flex-wrap: wrap;
+}
+
+.filter-tab-btn {
+  padding: 8px 18px;
+  border-radius: var(--radius-pill);
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.filter-tab-btn:hover {
+  border-color: var(--light-primary);
+  color: #ffffff;
+  background: rgba(0, 240, 255, 0.06);
+}
+
+.filter-tab-btn.active {
+  background: var(--light-primary);
+  color: #030612;
+  font-weight: 700;
+  border-color: var(--light-primary);
+  box-shadow: 0 0 20px var(--light-primary-glow);
+}
+
+/* 3D Project Cards Grid */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 2rem;
+  perspective: 1000px;
+}
+
+.project-card {
+  background: linear-gradient(160deg, rgba(16, 25, 54, 0.7), rgba(8, 12, 28, 0.85));
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transform-style: preserve-3d;
+  cursor: pointer;
+  position: relative;
+  transition: transform 0.2s ease-out, border-color var(--transition-normal), box-shadow var(--transition-normal);
+}
+
+.project-card:hover {
+  border-color: var(--light-primary);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.8), 0 0 30px var(--light-primary-glow);
+  transform: translateY(-6px) scale(1.02);
+}
+
+/* Card Visual Header */
+.project-card-media {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  background: #060914;
+}
+
+.project-card-media img,
+.project-card-media svg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.project-card:hover .project-card-media img,
+.project-card:hover .project-card-media svg {
+  transform: scale(1.06);
+}
+
+.project-card-badge {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  background: rgba(3, 7, 20, 0.85);
+  border: 1px solid var(--border-neon);
+  backdrop-filter: blur(12px);
+  padding: 4px 10px;
+  border-radius: var(--radius-sm);
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  color: var(--light-primary);
+  font-weight: 700;
+}
+
+/* Card Body */
+.project-card-content {
+  padding: 1.6rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  gap: 12px;
+}
+
+.project-category {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--light-secondary);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.project-title {
+  font-family: var(--font-heading);
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: #ffffff;
+  line-height: 1.3;
+}
+
+.project-desc {
+  font-family: var(--font-sans);
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  line-height: 1.55;
+  flex: 1;
+}
+
+/* Tech Tags */
+.project-tech-stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 6px;
+}
+
+.tech-tag {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  color: var(--text-muted);
+}
+
+.project-card-action {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  padding-top: 12px;
+  margin-top: 8px;
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--light-primary);
+  font-weight: 700;
+}
+
+/* Detailed Project Modal */
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(3, 5, 14, 0.85);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity var(--transition-normal);
+}
+
+.modal-backdrop.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.modal-card {
+  width: 100%;
+  max-width: 860px;
+  max-height: 90vh;
+  overflow-y: auto;
+  background: linear-gradient(160deg, #0e1634, #060a1a);
+  border: 1px solid var(--border-neon);
+  border-radius: var(--radius-xl);
+  box-shadow: 0 40px 100px rgba(0, 0, 0, 0.95), 0 0 60px var(--light-primary-glow);
+  position: relative;
+  transform: scale(0.95) translateY(20px);
+  transition: transform var(--transition-normal);
+}
+
+.modal-backdrop.active .modal-card {
+  transform: scale(1) translateY(0);
+}
+
+.modal-close-btn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: #ffffff;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  z-index: 20;
+  transition: all var(--transition-fast);
+}
+
+.modal-close-btn:hover {
+  background: var(--neon-magenta);
+  color: #ffffff;
+  box-shadow: 0 0 20px var(--neon-magenta);
+}
+
+.modal-media-viewport {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background: #03050c;
+  overflow: hidden;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.modal-media-viewport img,
+.modal-media-viewport svg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.modal-body {
+  padding: 2.2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}

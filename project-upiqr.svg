@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="800" height="450">
+  <defs>
+    <linearGradient id="upiBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0a081a" />
+      <stop offset="50%" stop-color="#140c2e" />
+      <stop offset="100%" stop-color="#070412" />
+    </linearGradient>
+    <linearGradient id="magentaNeon" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ff007f" />
+      <stop offset="100%" stop-color="#9d4edd" />
+    </linearGradient>
+    <linearGradient id="scanBeam" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#00f0ff" stop-opacity="0.8" />
+      <stop offset="100%" stop-color="#00f0ff" stop-opacity="0" />
+    </linearGradient>
+    <filter id="upiglow">
+      <feGaussianBlur stdDeviation="8" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <rect width="100%" height="100%" fill="url(#upiBg)" />
+
+  <!-- Center Floating QR Card -->
+  <g transform="translate(260, 65)">
+    <!-- Glow Backdrop -->
+    <rect x="-10" y="-10" width="300" height="300" rx="24" fill="none" stroke="#ff007f" stroke-width="2" opacity="0.4" filter="url(#upiglow)" />
+    <rect x="0" y="0" width="280" height="280" rx="16" fill="rgba(15, 10, 35, 0.9)" stroke="rgba(255, 0, 128, 0.6)" stroke-width="1.5" />
+    
+    <!-- Stylized 3D QR Matrix Pattern -->
+    <!-- Corner 1 -->
+    <rect x="25" y="25" width="60" height="60" rx="8" fill="none" stroke="#00f0ff" stroke-width="5" />
+    <rect x="37" y="37" width="36" height="36" rx="4" fill="#00f0ff" />
+    <!-- Corner 2 -->
+    <rect x="195" y="25" width="60" height="60" rx="8" fill="none" stroke="#00f0ff" stroke-width="5" />
+    <rect x="207" y="37" width="36" height="36" rx="4" fill="#00f0ff" />
+    <!-- Corner 3 -->
+    <rect x="25" y="195" width="60" height="60" rx="8" fill="none" stroke="#00f0ff" stroke-width="5" />
+    <rect x="37" y="207" width="36" height="36" rx="4" fill="#00f0ff" />
+
+    <!-- Matrix Pixels -->
+    <rect x="100" y="30" width="16" height="16" rx="3" fill="#ff007f" />
+    <rect x="130" y="30" width="16" height="32" rx="3" fill="#00f0ff" />
+    <rect x="160" y="45" width="16" height="16" rx="3" fill="#ff007f" />
+    <rect x="30" y="105" width="32" height="16" rx="3" fill="#ff007f" />
+    <rect x="75" y="105" width="16" height="16" rx="3" fill="#00f0ff" />
+    <rect x="105" y="90" width="70" height="70" rx="8" fill="url(#magentaNeon)" />
+    <!-- UPI Icon Center -->
+    <text x="140" y="132" fill="#ffffff" font-family="'Space Grotesk', sans-serif" font-weight="900" font-size="20" text-anchor="middle">UPI</text>
+    
+    <rect x="190" y="105" width="30" height="16" rx="3" fill="#00f0ff" />
+    <rect x="235" y="105" width="16" height="32" rx="3" fill="#ff007f" />
+    <rect x="105" y="180" width="16" height="32" rx="3" fill="#00f0ff" />
+    <rect x="135" y="195" width="32" height="16" rx="3" fill="#ff007f" />
+    <rect x="180" y="180" width="32" height="32" rx="4" fill="#00f0ff" />
+    <rect x="225" y="195" width="25" height="40" rx="3" fill="#ff007f" />
+
+    <!-- Laser Scanner Line -->
+    <line x1="10" y1="140" x2="270" y2="140" stroke="#00f0ff" stroke-width="3" filter="url(#upiglow)" />
+    <rect x="10" y="120" width="260" height="20" fill="url(#scanBeam)" />
+  </g>
+
+  <!-- Side Telemetry Panels -->
+  <g transform="translate(40, 160)">
+    <text x="0" y="0" fill="#00f0ff" font-family="'Space Grotesk', sans-serif" font-size="20" font-weight="700">UPI // INSTANT PAY</text>
+    <text x="0" y="25" fill="#e2e8f0" font-family="'JetBrains Mono', monospace" font-size="13">NPCI PROTOCOL v4.2</text>
+    <text x="0" y="50" fill="#00ff88" font-family="'JetBrains Mono', monospace" font-size="12">ENCRYPTION: 256-BIT RSA</text>
+    <text x="0" y="75" fill="#a0aec0" font-family="'JetBrains Mono', monospace" font-size="12">LATENCY: &lt; 140ms</text>
+  </g>
+
+  <g transform="translate(580, 160)">
+    <text x="0" y="0" fill="#ff007f" font-family="'Space Grotesk', sans-serif" font-size="20" font-weight="700">VERIFICATION</text>
+    <text x="0" y="25" fill="#e2e8f0" font-family="'JetBrains Mono', monospace" font-size="13">STATUS: SECURE 🟢</text>
+    <text x="0" y="50" fill="#a0aec0" font-family="'JetBrains Mono', monospace" font-size="12">DYNAMIC QR HASH: OK</text>
+    <text x="0" y="75" fill="#00f0ff" font-family="'JetBrains Mono', monospace" font-size="12">AUTO CHECKSUM: PASS</text>
+  </g>
+</svg>

@@ -1,0 +1,9 @@
+@echo off
+title Launching Haripriya Patra 3D Portfolio...
+echo Starting local web server for Haripriya Patra's Cinematic 3D Portfolio...
+start "" "http://localhost:8080"
+python -m http.server 8080
+if %ERRORLEVEL% NEQ 0 (
+    echo Opening directly via browser...
+    start "" "%~dp0index.html"
+)

@@ -1,0 +1,391 @@
+/* ==========================================================================
+   HERO EDITORIAL 3D STAGE & FIGMA-INSPIRED CARD
+   ========================================================================== */
+
+.hero-section {
+  position: relative;
+  min-height: 100vh;
+  padding: calc(var(--header-height) + 2rem) 1.5rem 4rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  perspective: 1200px;
+  overflow: hidden;
+}
+
+/* Background Ambient Lighting Halos */
+.hero-ambient-glow {
+  position: absolute;
+  width: 750px;
+  height: 500px;
+  border-radius: 50%;
+  background: radial-gradient(circle, var(--light-primary-glow) 0%, transparent 70%);
+  filter: blur(100px);
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  z-index: 1;
+  opacity: calc(0.85 * var(--bloom-strength));
+  transition: background var(--transition-normal), opacity var(--transition-normal);
+}
+
+.hero-ambient-secondary {
+  position: absolute;
+  width: 600px;
+  height: 400px;
+  border-radius: 50%;
+  background: radial-gradient(circle, var(--light-secondary-glow) 0%, transparent 70%);
+  filter: blur(90px);
+  top: 55%;
+  right: 15%;
+  pointer-events: none;
+  z-index: 1;
+  opacity: calc(0.7 * var(--bloom-strength));
+  transition: background var(--transition-normal);
+}
+
+/* Figma-Style 3D Floating Stage Card */
+.hero-card-container {
+  width: 100%;
+  max-width: 1100px;
+  perspective: 1500px;
+  z-index: 5;
+  margin: 0 auto;
+}
+
+.hero-3d-card {
+  position: relative;
+  width: 100%;
+  background: linear-gradient(145deg, rgba(16, 23, 50, 0.75), rgba(7, 11, 26, 0.9));
+  border: 1px solid var(--border-glass-bright);
+  border-radius: var(--radius-xl);
+  box-shadow: 0 40px 100px -20px rgba(0, 0, 0, 0.9), 0 0 50px var(--light-primary-glow);
+  padding: 2.2rem;
+  transform-style: preserve-3d;
+  transition: transform 0.15s ease-out, border-color var(--transition-normal), box-shadow var(--transition-normal);
+}
+
+/* Card Header HUD */
+.card-hud-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  padding-bottom: 1.2rem;
+  margin-bottom: 1.5rem;
+  transform: translateZ(30px);
+}
+
+.hud-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.hud-logo-icon {
+  width: 38px;
+  height: 38px;
+  border-radius: var(--radius-sm);
+  background: linear-gradient(135deg, var(--light-primary), var(--light-secondary));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: 1.2rem;
+  color: #03050f;
+  box-shadow: 0 0 18px var(--light-primary);
+}
+
+.hud-title-group h2 {
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: 0.5px;
+  margin: 0;
+}
+
+.hud-title-group span {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+.hud-telemetry-cluster {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+}
+
+.telemetry-item {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.telemetry-label {
+  color: var(--text-muted);
+  font-size: 0.65rem;
+  letter-spacing: 0.5px;
+}
+
+.telemetry-value {
+  color: var(--light-primary);
+  font-weight: 700;
+}
+
+/* Card Visual Centerstage with Overlapping 3D Layers */
+.card-stage-viewport {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  min-height: 440px;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background: #04060f;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform-style: preserve-3d;
+}
+
+/* Layer 1: Background Ambient & Grid */
+.stage-layer-bg {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at center, rgba(14, 25, 60, 0.8) 0%, #03050e 100%);
+  background-size: cover;
+  background-position: center;
+  z-index: 1;
+  transform: translateZ(0px);
+}
+
+.stage-layer-grid {
+  position: absolute;
+  inset: 0;
+  background-image: 
+    linear-gradient(to right, rgba(0, 240, 255, var(--wireframe-opacity)) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(0, 240, 255, var(--wireframe-opacity)) 1px, transparent 1px);
+  background-size: 40px 40px;
+  mask-image: radial-gradient(circle at center, black 40%, transparent 85%);
+  -webkit-mask-image: radial-gradient(circle at center, black 40%, transparent 85%);
+  z-index: 2;
+  transform: translateZ(15px);
+}
+
+/* Layer 2: Extruded 3D Typography Behind Character */
+.stage-layer-typography {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 3;
+  pointer-events: none;
+  transform: translateZ(35px);
+  user-select: none;
+}
+
+.extruded-3d-text {
+  font-family: var(--font-display);
+  font-size: clamp(3.5rem, 9.5vw, 8.5rem);
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: -2px;
+  color: rgba(255, 255, 255, 0.08);
+  -webkit-text-stroke: 1.5px rgba(255, 255, 255, 0.25);
+  text-shadow: 
+    0 1px 0 rgba(0, 240, 255, 0.3),
+    0 2px 0 rgba(0, 240, 255, 0.25),
+    0 4px 0 rgba(0, 240, 255, 0.2),
+    0 6px 12px rgba(0, 0, 0, 0.8),
+    0 0 30px var(--light-primary-glow);
+  white-space: nowrap;
+  transition: color var(--transition-normal), text-shadow var(--transition-normal);
+}
+
+/* Layer 3: Character Visual (Image Render) */
+.stage-layer-character {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 4;
+  transform: translateZ(65px) scale(1.04);
+  transition: transform 0.2s ease-out;
+}
+
+.character-render-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 20%;
+  border-radius: var(--radius-lg);
+  filter: drop-shadow(0 20px 30px rgba(0, 0, 0, 0.9));
+  transition: opacity 0.4s ease-in-out, filter 0.3s ease;
+}
+
+/* Layer 4: Foreground Glass Refraction & HUD Overlays */
+.stage-layer-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 5;
+  pointer-events: none;
+  transform: translateZ(90px);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1.8rem;
+}
+
+.stage-hud-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.persona-tag {
+  background: rgba(3, 7, 20, 0.75);
+  border: 1px solid var(--border-neon);
+  backdrop-filter: blur(16px);
+  padding: 8px 16px;
+  border-radius: var(--radius-sm);
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--light-primary);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  box-shadow: 0 0 20px rgba(0, 240, 255, 0.2);
+}
+
+.stage-hud-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.spec-badge-box {
+  background: rgba(4, 8, 22, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: var(--radius-md);
+  padding: 12px 18px;
+  backdrop-filter: blur(16px);
+}
+
+.spec-badge-title {
+  font-family: var(--font-heading);
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 4px;
+}
+
+.spec-badge-desc {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+}
+
+/* Card Editorial Footer Controls */
+.card-editorial-footer {
+  margin-top: 1.8rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  transform: translateZ(40px);
+}
+
+/* Interactive Persona Selector (Mini Thumbnails) */
+.persona-selector-track {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.persona-thumb-btn {
+  position: relative;
+  width: 58px;
+  height: 58px;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  border: 2px solid rgba(255, 255, 255, 0.12);
+  background: #090e24;
+  cursor: pointer;
+  padding: 0;
+  transition: all var(--transition-normal);
+}
+
+.persona-thumb-btn img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.persona-thumb-btn:hover {
+  border-color: var(--light-primary);
+  transform: translateY(-3px) scale(1.05);
+}
+
+.persona-thumb-btn.active {
+  border-color: var(--light-primary);
+  box-shadow: 0 0 20px var(--light-primary);
+  transform: translateY(-3px) scale(1.08);
+}
+
+.persona-thumb-btn.active::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--light-primary);
+}
+
+/* Navigation Arrow Controls */
+.hero-nav-controls {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.nav-arrow-btn {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-family: var(--font-mono);
+  font-size: 1.1rem;
+  transition: all var(--transition-fast);
+}
+
+.nav-arrow-btn:hover {
+  background: var(--light-primary);
+  border-color: var(--light-primary);
+  color: #030612;
+  box-shadow: 0 0 15px var(--light-primary);
+  transform: scale(1.08);
+}
+
+/* CTA Action Cluster */
+.hero-cta-cluster {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}

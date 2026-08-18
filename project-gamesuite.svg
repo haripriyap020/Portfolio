@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="800" height="450">
+  <defs>
+    <linearGradient id="suiteBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0b0816" />
+      <stop offset="50%" stop-color="#190e2b" />
+      <stop offset="100%" stop-color="#070512" />
+    </linearGradient>
+    <filter id="arcadeGlow">
+      <feGaussianBlur stdDeviation="5" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <rect width="100%" height="100%" fill="url(#suiteBg)" />
+
+  <!-- 4 Modular Utility & Game HUD Cards -->
+  <g transform="translate(60, 50)">
+    <!-- Card 1: Real-time Digital Clock -->
+    <rect x="0" y="0" width="320" height="150" rx="12" fill="rgba(20, 15, 40, 0.8)" stroke="rgba(0, 240, 255, 0.4)" stroke-width="1.5" />
+    <text x="20" y="30" fill="#00f0ff" font-family="'Space Grotesk', sans-serif" font-size="14" font-weight="700">REAL-TIME DIGITAL CLOCK</text>
+    <text x="20" y="90" fill="#00f0ff" font-family="'JetBrains Mono', monospace" font-size="34" font-weight="700" filter="url(#arcadeGlow)">22:50:15<tspan font-size="16" fill="#ff007f">.84</tspan></text>
+    <text x="20" y="125" fill="#a0aec0" font-family="'JetBrains Mono', monospace" font-size="11">PYTHON TKINTER // ASYNC LOOP</text>
+
+    <!-- Card 2: Tic Tac Toe AI & Rock Paper Scissors Arcade -->
+    <rect x="360" y="0" width="320" height="150" rx="12" fill="rgba(20, 15, 40, 0.8)" stroke="rgba(255, 0, 128, 0.4)" stroke-width="1.5" />
+    <text x="380" y="30" fill="#ff007f" font-family="'Space Grotesk', sans-serif" font-size="14" font-weight="700">NEURAL TIC-TAC-TOE &amp; ARCADE</text>
+    <!-- Mini Board -->
+    <g transform="translate(480, 45)">
+      <line x1="30" y1="0" x2="30" y2="80" stroke="rgba(255,255,255,0.3)" stroke-width="2" />
+      <line x1="60" y1="0" x2="60" y2="80" stroke="rgba(255,255,255,0.3)" stroke-width="2" />
+      <line x1="0" y1="28" x2="90" y2="28" stroke="rgba(255,255,255,0.3)" stroke-width="2" />
+      <line x1="0" y1="56" x2="90" y2="56" stroke="rgba(255,255,255,0.3)" stroke-width="2" />
+      <!-- X and O -->
+      <text x="7" y="22" fill="#00f0ff" font-family="'Space Grotesk', sans-serif" font-size="18" font-weight="bold">X</text>
+      <text x="37" y="50" fill="#ff007f" font-family="'Space Grotesk', sans-serif" font-size="18" font-weight="bold">O</text>
+      <text x="67" y="22" fill="#00f0ff" font-family="'Space Grotesk', sans-serif" font-size="18" font-weight="bold">X</text>
+      <text x="7" y="78" fill="#00f0ff" font-family="'Space Grotesk', sans-serif" font-size="18" font-weight="bold">X</text>
+    </g>
+    <text x="380" y="125" fill="#a0aec0" font-family="'JetBrains Mono', monospace" font-size="11">MINIMAX ALGORITHM // PYTHON</text>
+
+    <!-- Card 3: Cyber Text Editor -->
+    <rect x="0" y="180" width="320" height="150" rx="12" fill="rgba(20, 15, 40, 0.8)" stroke="rgba(0, 255, 136, 0.4)" stroke-width="1.5" />
+    <text x="20" y="210" fill="#00ff88" font-family="'Space Grotesk', sans-serif" font-size="14" font-weight="700">NOTEPAD-STYLE TEXT EDITOR</text>
+    <text x="20" y="245" fill="#e2e8f0" font-family="'JetBrains Mono', monospace" font-size="12">def initialize_buffer():</text>
+    <text x="40" y="268" fill="#00f0ff" font-family="'JetBrains Mono', monospace" font-size="12">stream.save_file(utf8=True)</text>
+    <text x="20" y="305" fill="#a0aec0" font-family="'JetBrains Mono', monospace" font-size="11">FILE I/O // LEXICAL PARSER</text>
+
+    <!-- Card 4: Lexical Spell Checker & To-Do Engine -->
+    <rect x="360" y="180" width="320" height="150" rx="12" fill="rgba(20, 15, 40, 0.8)" stroke="rgba(255, 183, 3, 0.4)" stroke-width="1.5" />
+    <text x="380" y="210" fill="#ffb703" font-family="'Space Grotesk', sans-serif" font-size="14" font-weight="700">SPELLING CHECKER &amp; TASK HUB</text>
+    <text x="380" y="245" fill="#a0aec0" font-family="'JetBrains Mono', monospace" font-size="12">INPUT: "intelegence"</text>
+    <text x="380" y="268" fill="#00ff88" font-family="'JetBrains Mono', monospace" font-size="12">CORRECTION ➔ "intelligence" (99%)</text>
+    <text x="380" y="305" fill="#a0aec0" font-family="'JetBrains Mono', monospace" font-size="11">LEVENSHTEIN DISTANCE // N-GRAM</text>
+  </g>
+</svg>

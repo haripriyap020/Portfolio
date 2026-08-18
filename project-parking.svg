@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="800" height="450">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#070b19" />
+      <stop offset="50%" stop-color="#0d1527" />
+      <stop offset="100%" stop-color="#050814" />
+    </linearGradient>
+    <linearGradient id="cyanNeon" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00f0ff" />
+      <stop offset="100%" stop-color="#7000ff" />
+    </linearGradient>
+    <linearGradient id="greenSlot" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#00ff88" stop-opacity="0.8" />
+      <stop offset="100%" stop-color="#00aa55" stop-opacity="0.2" />
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="6" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(0, 240, 255, 0.08)" stroke-width="1"/>
+    </pattern>
+  </defs>
+
+  <rect width="100%" height="100%" fill="url(#bgGrad)" />
+  <rect width="100%" height="100%" fill="url(#grid)" />
+
+  <!-- Holographic Grid Floor in 3D Perspective -->
+  <g transform="translate(0, 80)">
+    <!-- Perspective lines -->
+    <path d="M 100 320 L 300 120 M 700 320 L 500 120 M 400 320 L 400 120 M 250 320 L 350 120 M 550 320 L 450 120" stroke="rgba(0, 240, 255, 0.25)" stroke-width="1.5" />
+    <path d="M 100 320 L 700 320 M 150 270 L 650 270 M 220 210 L 580 210 M 270 160 L 530 160 M 300 120 L 500 120" stroke="rgba(0, 240, 255, 0.25)" stroke-width="1.5" />
+
+    <!-- Slot A1 -->
+    <polygon points="180,260 280,260 320,200 240,200" fill="url(#greenSlot)" stroke="#00ff88" stroke-width="2" filter="url(#glow)"/>
+    <text x="240" y="240" fill="#00ff88" font-family="'JetBrains Mono', monospace" font-size="14" font-weight="bold">SLOT 01 // VACANT</text>
+
+    <!-- Slot A2 (Occupied) -->
+    <polygon points="320,260 480,260 460,200 340,200" fill="rgba(255, 0, 128, 0.15)" stroke="#ff007f" stroke-width="2" filter="url(#glow)"/>
+    <text x="360" y="240" fill="#ff007f" font-family="'JetBrains Mono', monospace" font-size="14" font-weight="bold">OCCUPIED</text>
+    
+    <!-- Vehicle Wireframe -->
+    <path d="M 370 235 L 430 235 L 420 215 L 380 215 Z" fill="none" stroke="#ff007f" stroke-width="2" filter="url(#glow)"/>
+    <circle cx="380" cy="235" r="4" fill="#00f0ff"/>
+    <circle cx="420" cy="235" r="4" fill="#00f0ff"/>
+
+    <!-- Slot A3 -->
+    <polygon points="520,260 620,260 560,200 480,200" fill="url(#greenSlot)" stroke="#00ff88" stroke-width="2" filter="url(#glow)"/>
+    <text x="530" y="240" fill="#00ff88" font-family="'JetBrains Mono', monospace" font-size="14" font-weight="bold">SLOT 02 // VACANT</text>
+  </g>
+
+  <!-- HUD Telemetry overlay -->
+  <g transform="translate(40, 40)">
+    <rect x="0" y="0" width="260" height="70" rx="8" fill="rgba(5, 12, 30, 0.85)" stroke="rgba(0, 240, 255, 0.4)" stroke-width="1.5" />
+    <text x="20" y="28" fill="#00f0ff" font-family="'Space Grotesk', sans-serif" font-size="15" font-weight="700" letter-spacing="1">SMART-PARK MATRIX</text>
+    <text x="20" y="50" fill="#a0aec0" font-family="'JetBrains Mono', monospace" font-size="11">SLOT CAPACITY: 94.2% OPTIMAL</text>
+    <circle cx="230" cy="24" r="5" fill="#00ff88" filter="url(#glow)"/>
+  </g>
+
+  <g transform="translate(500, 40)">
+    <rect x="0" y="0" width="260" height="70" rx="8" fill="rgba(5, 12, 30, 0.85)" stroke="rgba(255, 0, 128, 0.4)" stroke-width="1.5" />
+    <text x="20" y="28" fill="#ff007f" font-family="'Space Grotesk', sans-serif" font-size="15" font-weight="700" letter-spacing="1">LIVE TELEMETRY GATE</text>
+    <text x="20" y="50" fill="#a0aec0" font-family="'JetBrains Mono', monospace" font-size="11">AUTO SENSOR: ACTIVE // RFID</text>
+  </g>
+</svg>

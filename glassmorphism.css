@@ -1,0 +1,182 @@
+/* ==========================================================================
+   GLASSMORPHISM, 3D SURFACES & HUD TELEMETRY STYLES
+   ========================================================================== */
+
+/* Glass Cards */
+.glass-panel {
+  background: var(--bg-card);
+  backdrop-filter: blur(24px) saturate(180%);
+  -webkit-backdrop-filter: blur(24px) saturate(180%);
+  border: 1px solid var(--border-glass);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-glass);
+  position: relative;
+  overflow: hidden;
+  transition: transform var(--transition-normal), border-color var(--transition-normal), box-shadow var(--transition-normal);
+}
+
+.glass-panel::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+  pointer-events: none;
+}
+
+.glass-panel:hover {
+  border-color: var(--border-glass-bright);
+}
+
+/* Cyber Telemetry Corner Brackets */
+.cyber-brackets {
+  position: relative;
+}
+
+.cyber-brackets::after,
+.cyber-brackets::before {
+  content: '';
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  pointer-events: none;
+  z-index: 10;
+  transition: border-color var(--transition-fast);
+}
+
+.cyber-brackets::before {
+  top: 10px;
+  left: 10px;
+  border-top: 2px solid var(--light-primary);
+  border-left: 2px solid var(--light-primary);
+}
+
+.cyber-brackets::after {
+  bottom: 10px;
+  right: 10px;
+  border-bottom: 2px solid var(--light-secondary);
+  border-right: 2px solid var(--light-secondary);
+}
+
+/* Glowing Neon Badge */
+.neon-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 14px;
+  border-radius: var(--radius-pill);
+  background: rgba(0, 240, 255, 0.08);
+  border: 1px solid rgba(0, 240, 255, 0.25);
+  color: var(--light-primary);
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  backdrop-filter: blur(12px);
+  box-shadow: 0 0 15px rgba(0, 240, 255, 0.15);
+  transition: all var(--transition-fast);
+}
+
+.neon-badge .pulse-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--light-primary);
+  box-shadow: 0 0 10px var(--light-primary);
+  animation: pulse-glow 2s infinite ease-in-out;
+}
+
+@keyframes pulse-glow {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.3); opacity: 0.6; }
+}
+
+/* Cyber Buttons */
+.cyber-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 12px 24px;
+  font-family: var(--font-heading);
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  color: #ffffff;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.03));
+  border: 1px solid var(--border-glass-bright);
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  backdrop-filter: blur(12px);
+  transition: all var(--transition-normal);
+}
+
+.cyber-btn-primary {
+  background: linear-gradient(135deg, var(--light-primary), #0088ff);
+  color: #030612;
+  border-color: var(--light-primary);
+  box-shadow: 0 0 25px var(--light-primary-glow);
+}
+
+.cyber-btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 35px var(--light-primary);
+}
+
+.cyber-btn-secondary:hover {
+  border-color: var(--light-primary);
+  color: var(--light-primary);
+  background: rgba(0, 240, 255, 0.08);
+  box-shadow: 0 0 20px var(--light-primary-glow);
+  transform: translateY(-2px);
+}
+
+.cyber-btn:active {
+  transform: translateY(1px);
+}
+
+/* Glitch Text Effect */
+.glitch-text {
+  position: relative;
+  display: inline-block;
+}
+
+.glitch-text::before,
+.glitch-text::after {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  clip: rect(0, 0, 0, 0);
+}
+
+.glitch-text:hover::before {
+  left: -2px;
+  text-shadow: 2px 0 var(--neon-magenta);
+  animation: glitch-anim-1 0.4s infinite linear alternate-reverse;
+}
+
+.glitch-text:hover::after {
+  left: 2px;
+  text-shadow: -2px 0 var(--neon-cyan);
+  animation: glitch-anim-2 0.3s infinite linear alternate-reverse;
+}
+
+@keyframes glitch-anim-1 {
+  0% { clip: rect(10px, 9999px, 44px, 0); }
+  50% { clip: rect(30px, 9999px, 80px, 0); }
+  100% { clip: rect(12px, 9999px, 50px, 0); }
+}
+
+@keyframes glitch-anim-2 {
+  0% { clip: rect(40px, 9999px, 20px, 0); }
+  50% { clip: rect(15px, 9999px, 60px, 0); }
+  100% { clip: rect(70px, 9999px, 90px, 0); }
+}

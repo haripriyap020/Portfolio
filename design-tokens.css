@@ -1,0 +1,113 @@
+/* ==========================================================================
+   DESIGN TOKENS & SYSTEM VARIABLES
+   ========================================================================== */
+
+:root {
+  /* Core Backgrounds */
+  --bg-darkest: #03050d;
+  --bg-primary: #050816;
+  --bg-secondary: #090e24;
+  --bg-tertiary: #0e1638;
+  --bg-card: rgba(10, 16, 38, 0.65);
+  --bg-card-hover: rgba(14, 22, 52, 0.85);
+  --bg-glass: rgba(15, 23, 50, 0.55);
+  --bg-glass-strong: rgba(12, 19, 42, 0.85);
+
+  /* Primary Neon Accents */
+  --neon-cyan: #00f0ff;
+  --neon-magenta: #ff007f;
+  --neon-violet: #8a2be2;
+  --neon-green: #00ff88;
+  --neon-gold: #ffb703;
+  --neon-coral: #ff5e36;
+
+  /* Active Dynamic Lighting Mood (Default: Cyberpunk Neon) */
+  --light-primary: var(--neon-cyan);
+  --light-secondary: var(--neon-magenta);
+  --light-primary-glow: rgba(0, 240, 255, 0.4);
+  --light-secondary-glow: rgba(255, 0, 127, 0.35);
+  --rim-intensity: 1;
+  --bloom-strength: 1;
+  --wireframe-opacity: 0.15;
+
+  /* Typography */
+  --font-display: 'Syne', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-heading: 'Space Grotesk', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+  --font-sans: 'Space Grotesk', system-ui, sans-serif;
+
+  /* Text Colors */
+  --text-primary: #f8fafc;
+  --text-secondary: #cbd5e1;
+  --text-muted: #64748b;
+  --text-dim: #475569;
+  --text-accent: var(--light-primary);
+
+  /* Borders & Highlights */
+  --border-glass: rgba(255, 255, 255, 0.08);
+  --border-glass-bright: rgba(255, 255, 255, 0.18);
+  --border-neon: rgba(0, 240, 255, 0.3);
+  --border-active: var(--light-primary);
+
+  /* Shadows & Glows */
+  --glow-cyan: 0 0 25px rgba(0, 240, 255, 0.45);
+  --glow-magenta: 0 0 25px rgba(255, 0, 127, 0.45);
+  --glow-gold: 0 0 25px rgba(255, 183, 3, 0.45);
+  --glow-green: 0 0 25px rgba(0, 255, 136, 0.45);
+  --shadow-glass: 0 20px 50px rgba(0, 0, 0, 0.6), 0 0 1px rgba(255, 255, 255, 0.1) inset;
+  --shadow-elevated: 0 30px 60px -12px rgba(0, 0, 0, 0.8), 0 0 40px var(--light-primary-glow);
+
+  /* Spacing */
+  --space-xs: 0.25rem;
+  --space-sm: 0.5rem;
+  --space-md: 1rem;
+  --space-lg: 1.5rem;
+  --space-xl: 2rem;
+  --space-2xl: 3rem;
+  --space-3xl: 4.5rem;
+
+  /* Layout */
+  --container-max: 1440px;
+  --header-height: 76px;
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  --radius-xl: 28px;
+  --radius-pill: 9999px;
+
+  /* Transitions */
+  --ease-spring: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  --ease-smooth: cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-fast: 0.15s var(--ease-smooth);
+  --transition-normal: 0.3s var(--ease-smooth);
+  --transition-slow: 0.6s var(--ease-smooth);
+}
+
+/* Lighting Theme Presets */
+body[data-lighting-preset="cyberpunk"] {
+  --light-primary: #00f0ff;
+  --light-secondary: #ff007f;
+  --light-primary-glow: rgba(0, 240, 255, 0.45);
+  --light-secondary-glow: rgba(255, 0, 127, 0.4);
+}
+
+body[data-lighting-preset="sunset"] {
+  --light-primary: #ffb703;
+  --light-secondary: #ff007f;
+  --light-primary-glow: rgba(255, 183, 3, 0.45);
+  --light-secondary-glow: rgba(255, 0, 127, 0.4);
+}
+
+body[data-lighting-preset="midnight"] {
+  --light-primary: #a855f7;
+  --light-secondary: #00f0ff;
+  --light-primary-glow: rgba(168, 85, 247, 0.45);
+  --light-secondary-glow: rgba(0, 240, 255, 0.4);
+}
+
+body[data-lighting-preset="matrix"] {
+  --light-primary: #00ff88;
+  --light-secondary: #ccff00;
+  --light-primary-glow: rgba(0, 255, 136, 0.45);
+  --light-secondary-glow: rgba(204, 255, 0, 0.4);
+}

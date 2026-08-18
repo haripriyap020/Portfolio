@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="800" height="450">
+  <defs>
+    <linearGradient id="finBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#070d1e" />
+      <stop offset="50%" stop-color="#0e172e" />
+      <stop offset="100%" stop-color="#060914" />
+    </linearGradient>
+    <linearGradient id="finCyan" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00f0ff" />
+      <stop offset="100%" stop-color="#00ff88" />
+    </linearGradient>
+    <filter id="finGlow">
+      <feGaussianBlur stdDeviation="6" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <rect width="100%" height="100%" fill="url(#finBg)" />
+
+  <!-- Graph Matrix & Financial Calculators -->
+  <g transform="translate(60, 60)">
+    <rect width="680" height="330" rx="16" fill="rgba(10, 20, 45, 0.7)" stroke="rgba(0, 240, 255, 0.3)" stroke-width="1.5" />
+    
+    <!-- Header -->
+    <path d="M 20 45 L 660 45" stroke="rgba(0, 240, 255, 0.15)" stroke-width="1" />
+    <text x="30" y="32" fill="#00f0ff" font-family="'Space Grotesk', sans-serif" font-size="16" font-weight="700">RENT &amp; UTILITY FINANCIAL ENGINE // v2.4</text>
+    <circle cx="645" cy="27" r="6" fill="#00ff88" filter="url(#finGlow)"/>
+
+    <!-- Chart Bars -->
+    <g transform="translate(40, 70)">
+      <!-- Grid Lines -->
+      <line x1="0" y1="200" x2="380" y2="200" stroke="rgba(255,255,255,0.1)" stroke-width="1" />
+      <line x1="0" y1="150" x2="380" y2="150" stroke="rgba(255,255,255,0.05)" stroke-dasharray="4" />
+      <line x1="0" y1="100" x2="380" y2="100" stroke="rgba(255,255,255,0.05)" stroke-dasharray="4" />
+      <line x1="0" y1="50" x2="380" y2="50" stroke="rgba(255,255,255,0.05)" stroke-dasharray="4" />
+
+      <!-- Area spline / bars -->
+      <path d="M 20 180 L 70 140 L 120 160 L 170 110 L 220 90 L 270 120 L 320 60 L 370 40 L 370 200 L 20 200 Z" fill="rgba(0, 240, 255, 0.15)" />
+      <path d="M 20 180 L 70 140 L 120 160 L 170 110 L 220 90 L 270 120 L 320 60 L 370 40" fill="none" stroke="#00f0ff" stroke-width="3" filter="url(#finGlow)" />
+      
+      <!-- Nodes -->
+      <circle cx="170" cy="110" r="5" fill="#ffffff" stroke="#00f0ff" stroke-width="2" />
+      <circle cx="320" cy="60" r="5" fill="#ffffff" stroke="#00f0ff" stroke-width="2" />
+      <circle cx="370" cy="40" r="6" fill="#00ff88" filter="url(#finGlow)" />
+    </g>
+
+    <!-- Side Metrics Widget -->
+    <g transform="translate(460, 70)">
+      <rect x="0" y="0" width="190" height="90" rx="10" fill="rgba(0, 240, 255, 0.08)" stroke="rgba(0, 240, 255, 0.3)" />
+      <text x="15" y="28" fill="#a0aec0" font-family="'JetBrains Mono', monospace" font-size="11">TOTAL ESTIMATED</text>
+      <text x="15" y="60" fill="#00f0ff" font-family="'Space Grotesk', sans-serif" font-size="24" font-weight="700">₹ 24,500</text>
+
+      <rect x="0" y="105" width="190" height="95" rx="10" fill="rgba(255, 0, 128, 0.08)" stroke="rgba(255, 0, 128, 0.3)" />
+      <text x="15" y="133" fill="#a0aec0" font-family="'JetBrains Mono', monospace" font-size="11">PER MEMBER SPLIT</text>
+      <text x="15" y="165" fill="#ff007f" font-family="'Space Grotesk', sans-serif" font-size="24" font-weight="700">₹ 6,125</text>
+    </g>
+  </g>
+</svg>
